@@ -40,9 +40,16 @@
   color: var(--text-primary);
 }
 
-.app {
-  background: var(--background);
-  position: relative;
+.modal {
+  position: absolute;
+  background: rgba(34, 34, 34, 0.548);
+  color: var(--text-primary);
+  border: solid 2px #00f7ff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
 }
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=Modal.css.map */

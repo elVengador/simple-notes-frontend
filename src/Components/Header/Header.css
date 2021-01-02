@@ -1,3 +1,8 @@
+.header__title {
+  font-family: "Nova Flat", cursive;
+  font-size: 24px;
+}
+
 .button, .important-button {
   font-family: "Nova Flat", cursive;
   font-size: 18px;
@@ -40,9 +45,21 @@
   color: var(--text-primary);
 }
 
-.app {
-  background: var(--background);
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--height-header);
+  padding: 0.5em 1em;
   position: relative;
+  background: var(--primary);
+  color: white;
+}
+.header__title {
+  display: inline;
+  margin: 0px;
+  color: var(--secondary);
 }
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=Header.css.map */

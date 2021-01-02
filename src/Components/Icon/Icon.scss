@@ -1,0 +1,12 @@
+@use "../../Globals";
+.icon-light {
+  color: var(--text-secondary);
+  padding: 0px;
+  margin: 0px;
+  width: auto;
+}
+.icon-dark {
+  color: var(--text-primary);
+  padding: 0px;
+  margin: 0px;
+}

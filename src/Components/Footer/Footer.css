@@ -3,6 +3,11 @@
   font-size: 18px;
 }
 
+.footer__title {
+  font-family: "Nova Flat", cursive;
+  font-size: 14px;
+}
+
 .button, .important-button {
   margin: 1em;
   padding: 0.5em 1em;
@@ -40,9 +45,18 @@
   color: var(--text-primary);
 }
 
-.app {
-  background: var(--background);
-  position: relative;
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0.5em 1em;
+  height: var(--height-footer);
+  background: var(--primary);
+}
+.footer__title {
+  display: inline;
+  color: var(--secondary);
 }
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=Footer.css.map */

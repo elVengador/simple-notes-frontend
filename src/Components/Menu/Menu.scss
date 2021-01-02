@@ -1,0 +1,34 @@
+@use "../../Globals";
+.menu {
+  background: var(--background);
+  max-width: 400px;
+  text-align: center;
+  margin: auto;
+  &__header {
+    background: var(--primary);
+    padding: 0px 100px;
+    position: relative;
+    .icon {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+    }
+    h2 {
+      margin: 0px;
+      padding: 0.5em;
+      color: var(--secondary);
+      @extend %litle-title;
+    }
+  }
+  &__body {
+    ul {
+      text-align: center;
+      list-style: none;
+      padding: 0px;
+      li {
+        margin: 1em;
+        @extend %normal-text;
+      }
+    }
+  }
+}

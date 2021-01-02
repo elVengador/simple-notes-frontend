@@ -1,4 +1,9 @@
-.button, .important-button {
+.menu__header h2 {
+  font-family: "Nova Flat", cursive;
+  font-size: 24px;
+}
+
+.menu__body ul li, .button, .important-button {
   font-family: "Nova Flat", cursive;
   font-size: 18px;
 }
@@ -40,9 +45,34 @@
   color: var(--text-primary);
 }
 
-.app {
+.menu {
   background: var(--background);
+  max-width: 400px;
+  text-align: center;
+  margin: auto;
+}
+.menu__header {
+  background: var(--primary);
+  padding: 0px 100px;
   position: relative;
 }
+.menu__header .icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.menu__header h2 {
+  margin: 0px;
+  padding: 0.5em;
+  color: var(--secondary);
+}
+.menu__body ul {
+  text-align: center;
+  list-style: none;
+  padding: 0px;
+}
+.menu__body ul li {
+  margin: 1em;
+}
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=Menu.css.map */

@@ -1,0 +1,22 @@
+@use "../../Globals";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--height-header);
+  padding: 0.5em 1em;
+  position: relative;
+  background: var(--primary);
+  color: white;
+
+  &__title {
+    display: inline;
+    margin: 0px;
+    color: var(--secondary);
+    @extend %litle-title;
+  }
+  &__menu {
+  }
+}

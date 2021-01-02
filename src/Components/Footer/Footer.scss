@@ -1,0 +1,17 @@
+@use "../../Globals";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0.5em 1em;
+  height: var(--height-footer);
+  background: var(--primary);
+
+  &__title {
+    display: inline;
+    color: var(--secondary);
+    @extend %litle-text;
+  }
+}

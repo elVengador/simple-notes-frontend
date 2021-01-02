@@ -1,14 +1,4 @@
-.button, .important-button {
-  font-family: "Nova Flat", cursive;
-  font-size: 18px;
-}
-
-.button, .important-button {
-  margin: 1em;
-  padding: 0.5em 1em;
-  border: none;
-}
-
+@use "./Shared";
 :root {
   --primary: rgb(22, 89, 190);
   --secondary: rgb(255, 199, 0);
@@ -20,7 +10,6 @@
   --height-header: 48px;
   --height-footer: 22px;
 }
-
 .wrapper {
   border: solid 1px red;
   box-sizing: border-box;
@@ -29,20 +18,13 @@
   height: calc(100vh - var(--height-header) - var(--height-footer));
   overflow-y: scroll;
 }
-
 .button {
   background: var(--primary);
   color: var(--text-secondary);
+  @extend %box;
 }
-
 .important-button {
   background: var(--secondary);
   color: var(--text-primary);
+  @extend %box;
 }
-
-.app {
-  background: var(--background);
-  position: relative;
-}
-
-/*# sourceMappingURL=App.css.map */

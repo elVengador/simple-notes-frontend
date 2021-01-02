@@ -1,0 +1,23 @@
+%title {
+  text-align: center;
+  font-family: "Nova Flat", cursive;
+  font-size: 36px;
+}
+%litle-title {
+  font-family: "Nova Flat", cursive;
+  font-size: 24px;
+}
+%normal-text {
+  font-family: "Nova Flat", cursive;
+  font-size: 18px;
+}
+%litle-text {
+  font-family: "Nova Flat", cursive;
+  font-size: 14px;
+}
+%box {
+  margin: 1em;
+  padding: 0.5em 1em;
+  border: none;
+  @extend %normal-text;
+}

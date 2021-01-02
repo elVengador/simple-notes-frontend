@@ -40,9 +40,17 @@
   color: var(--text-primary);
 }
 
-.app {
-  background: var(--background);
-  position: relative;
+.icon-light {
+  color: var(--text-secondary);
+  padding: 0px;
+  margin: 0px;
+  width: auto;
 }
 
-/*# sourceMappingURL=App.css.map */
+.icon-dark {
+  color: var(--text-primary);
+  padding: 0px;
+  margin: 0px;
+}
+
+/*# sourceMappingURL=Icon.css.map */
