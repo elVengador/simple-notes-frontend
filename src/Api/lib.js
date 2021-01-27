@@ -1,4 +1,7 @@
-const API = process.env.REACT_APP_API ?? '';
+const API =
+  process.env.NODE_ENV === 'production'
+    ? 'https://ev-notes.herokuapp.com/'
+    : 'http://localhost:4000/api/v1';
 
 const getUser = () => localStorage.getItem('USER_ID') ?? '';
 
@@ -26,6 +29,6 @@ const getOptions = (method, body = {}) => {
   return opt;
 };
 
-const isUserLogged = () => getAccessToken && getRefreshToken && getOptions;
+const isUserLogged = () => getAccessToken() && getRefreshToken() && getUser();
 
 export { API, getUser, getOptions, isUserLogged };

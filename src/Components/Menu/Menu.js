@@ -13,7 +13,7 @@ export default function Menu({ testId, hideMenu }) {
     hideMenu();
     history.push(path);
   };
-  const pageList = isUserLogged
+  const pageList = isUserLogged()
     ? [
         { name: 'home', link: '/notes' },
         { name: 'tags', link: '/tags' },
