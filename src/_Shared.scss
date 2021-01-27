@@ -1,23 +1,48 @@
 %title {
   text-align: center;
-  font-family: "Nova Flat", cursive;
+  font-family: 'Nova Flat', cursive;
+  font-weight: 400;
   font-size: 36px;
 }
 %litle-title {
-  font-family: "Nova Flat", cursive;
+  font-family: 'Nova Flat', cursive;
   font-size: 24px;
 }
 %normal-text {
-  font-family: "Nova Flat", cursive;
+  font-family: 'Nova Flat', cursive;
   font-size: 18px;
 }
 %litle-text {
-  font-family: "Nova Flat", cursive;
+  font-family: 'Nova Flat', cursive;
   font-size: 14px;
 }
+/* box: use buttons*/
 %box {
-  margin: 1em;
   padding: 0.5em 1em;
   border: none;
+  box-shadow: 3px 3px 5px rgb(129, 129, 129);
   @extend %normal-text;
+}
+/* box-input: use in inputs*/
+%box-input {
+  margin: 1em 0em;
+  padding: 0.5em 1em;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 5px rgb(177, 177, 177);
+  @extend %normal-text;
+}
+%config-color-primary {
+  background: var(--primary);
+  color: var(--text-secondary);
+}
+%config-color-secondary {
+  background: var(--secondary);
+  color: var(--text-primary);
+}
+%message {
+  justify-content: center;
+  padding: 1em;
+  margin: 1em 0em;
+  @extend %litle-text;
 }

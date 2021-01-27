@@ -1,0 +1,13 @@
+.tag-note {
+  padding: 1em;
+  &__title {
+    padding: 0.7em 10px;
+    margin: 0em;
+
+    text-align: left;
+
+    background: var(--primary);
+    color: var(--text-secondary);
+    box-shadow: 3px 3px 5px rgb(155, 155, 155);
+  }
+}

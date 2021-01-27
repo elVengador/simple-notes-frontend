@@ -1,0 +1,39 @@
+.tag-item__name, .tag-item {
+  font-family: "Nova Flat", cursive;
+  font-size: 18px;
+}
+
+/* box: use buttons*/
+.tag-item {
+  padding: 0.5em 1em;
+  border: none;
+  box-shadow: 3px 3px 5px #818181;
+}
+
+/* box-input: use in inputs*/
+.tag-item {
+  background: var(--secondary);
+  color: var(--text-primary);
+}
+
+.tag-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 0em;
+}
+.tag-item__name {
+  margin: 0px;
+}
+.tag-item__controls {
+  display: flex;
+}
+
+.tag-item-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 0.5em;
+}
+
+/*# sourceMappingURL=TagItem.css.map */

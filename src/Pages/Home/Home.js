@@ -15,11 +15,14 @@ export default function Home() {
         Write yout notes easy and read them ererywhere
       </p>
       <div className="home__options">
-        <button className="button" onClick={() => history.push("/sign-in")}>
+        <button
+          className="button-primary"
+          onClick={() => history.push("/sign-in")}
+        >
           Sign In
         </button>
         <button
-          className="important-button"
+          className="button-secondary"
           onClick={() => history.push("/sign-up")}
         >
           Sign Up

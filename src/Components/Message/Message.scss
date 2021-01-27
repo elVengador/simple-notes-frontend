@@ -1,0 +1,9 @@
+@use '../../Shared';
+.message--success {
+  background: var(--success);
+  @extend %message;
+}
+.message--error {
+  background: var(--fail);
+  @extend %message;
+}

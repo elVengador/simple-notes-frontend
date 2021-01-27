@@ -1,0 +1,24 @@
+@use "../../Shared";
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 0em;
+  @extend %config-color-secondary;
+  @extend %box;
+  &__name {
+    @extend %normal-text;
+    margin: 0px;
+  }
+  &__controls {
+    display: flex;
+  }
+}
+
+.note-item-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 0.5em;
+}

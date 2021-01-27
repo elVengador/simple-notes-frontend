@@ -1,0 +1,17 @@
+@use "../../../Shared";
+
+.input-container {
+  width: 100%;
+}
+.input-select {
+  width: 100%;
+  @extend %config-color-secondary;
+  @extend %box-input;
+}
+.input-select + label {
+  position: absolute;
+  left: 1em;
+}
+.input-select:focus + label {
+  color: var(--primary);
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 export default function useApp() {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -6,5 +6,9 @@ export default function useApp() {
   const showMenu = () => setIsMenuActive(true);
   const hideMenu = () => setIsMenuActive(false);
 
-  return { isMenuActive, showMenu, hideMenu };
+  return {
+    isMenuActive,
+    showMenu,
+    hideMenu,
+  };
 }

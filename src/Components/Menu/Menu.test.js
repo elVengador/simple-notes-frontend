@@ -1,5 +1,5 @@
-import { getByText, render } from "@testing-library/react";
-import { BrowserRouter, useLocation } from "react-router-dom";
+import { render } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import { act, renderHook } from "@testing-library/react-hooks";
 import userEvent from "@testing-library/user-event";
 import useApp from "../../useApp";

@@ -3,48 +3,8 @@
   font-size: 24px;
 }
 
-.button, .important-button {
-  font-family: "Nova Flat", cursive;
-  font-size: 18px;
-}
-
-.button, .important-button {
-  margin: 1em;
-  padding: 0.5em 1em;
-  border: none;
-}
-
-:root {
-  --primary: rgb(22, 89, 190);
-  --secondary: rgb(255, 199, 0);
-  --success: rgb(73, 177, 56);
-  --fail: rgb(237, 88, 88);
-  --text-primary: rgb(37, 37, 37);
-  --text-secondary: rgb(206, 206, 206);
-  --background: rgb(237, 237, 237);
-  --height-header: 48px;
-  --height-footer: 22px;
-}
-
-.wrapper {
-  border: solid 1px red;
-  box-sizing: border-box;
-  margin: 0em 1em;
-  padding: 1em;
-  height: calc(100vh - var(--height-header) - var(--height-footer));
-  overflow-y: scroll;
-}
-
-.button {
-  background: var(--primary);
-  color: var(--text-secondary);
-}
-
-.important-button {
-  background: var(--secondary);
-  color: var(--text-primary);
-}
-
+/* box: use buttons*/
+/* box-input: use in inputs*/
 .header {
   display: flex;
   justify-content: space-between;

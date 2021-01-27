@@ -1,0 +1,59 @@
+.button--icon-light, .button--icon-dark, .button-primary, .button-primary--center, .button-secondary {
+  font-family: "Nova Flat", cursive;
+  font-size: 18px;
+}
+
+/* box: use buttons*/
+.button-primary, .button-primary--center, .button-secondary {
+  padding: 0.5em 1em;
+  border: none;
+  box-shadow: 3px 3px 5px #818181;
+}
+
+/* box-input: use in inputs*/
+.button--icon-light, .button--icon-dark {
+  margin: 1em 0em;
+  padding: 0.5em 1em;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 5px #b1b1b1;
+}
+
+.button-primary, .button-primary--center {
+  background: var(--primary);
+  color: var(--text-secondary);
+}
+
+.button-secondary {
+  background: var(--secondary);
+  color: var(--text-primary);
+}
+
+.button-primary {
+  margin: 1em 0em;
+}
+
+.button-primary--center {
+  display: block;
+  margin: 1em auto;
+}
+
+.button-secondary {
+  margin: 1em;
+}
+
+.button--icon {
+  margin: 0em 0.5em;
+}
+
+.button--icon-light {
+  color: var(--text-secondary);
+  background-color: var(--primary);
+}
+
+.button--icon-dark {
+  color: var(--secondary);
+  background-color: burlywood;
+}
+
+/*# sourceMappingURL=Button.css.map */

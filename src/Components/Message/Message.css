@@ -1,0 +1,22 @@
+.message--success, .message--error {
+  font-family: "Nova Flat", cursive;
+  font-size: 14px;
+}
+
+/* box: use buttons*/
+/* box-input: use in inputs*/
+.message--success, .message--error {
+  justify-content: center;
+  padding: 1em;
+  margin: 1em 0em;
+}
+
+.message--success {
+  background: var(--success);
+}
+
+.message--error {
+  background: var(--fail);
+}
+
+/*# sourceMappingURL=Message.css.map */

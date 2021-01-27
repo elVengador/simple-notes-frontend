@@ -1,0 +1,12 @@
+.title-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0px;
+  &__text {
+    margin: 0px;
+  }
+  &__options {
+    border: solid 1px green;
+  }
+}

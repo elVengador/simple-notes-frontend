@@ -1,14 +1,12 @@
-.button, .important-button {
+.title-page {
+  text-align: center;
   font-family: "Nova Flat", cursive;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 36px;
 }
 
-.button, .important-button {
-  margin: 1em;
-  padding: 0.5em 1em;
-  border: none;
-}
-
+/* box: use buttons*/
+/* box-input: use in inputs*/
 :root {
   --primary: rgb(22, 89, 190);
   --secondary: rgb(255, 199, 0);
@@ -21,8 +19,12 @@
   --height-footer: 22px;
 }
 
+.app {
+  background: var(--background);
+  position: relative;
+}
+
 .wrapper {
-  border: solid 1px red;
   box-sizing: border-box;
   margin: 0em 1em;
   padding: 1em;
@@ -30,18 +32,11 @@
   overflow-y: scroll;
 }
 
-.button {
-  background: var(--primary);
-  color: var(--text-secondary);
+.wrapper-flex {
+  display: flex;
 }
 
-.important-button {
-  background: var(--secondary);
-  color: var(--text-primary);
-}
-
-.app {
-  background: var(--background);
+.input-container {
   position: relative;
 }
 

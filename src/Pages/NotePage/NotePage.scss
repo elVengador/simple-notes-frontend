@@ -1,0 +1,8 @@
+@use "../../Shared";
+.notes {
+  color: var(--text-primary);
+  border: solid gold 2px;
+  &__title {
+    @extend %title;
+  }
+}

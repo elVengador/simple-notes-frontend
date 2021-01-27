@@ -1,0 +1,15 @@
+.notes__title {
+  text-align: center;
+  font-family: "Nova Flat", cursive;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+/* box: use buttons*/
+/* box-input: use in inputs*/
+.notes {
+  color: var(--text-primary);
+  border: solid gold 2px;
+}
+
+/*# sourceMappingURL=NotePage.css.map */

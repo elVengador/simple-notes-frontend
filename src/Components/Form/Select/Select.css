@@ -1,0 +1,38 @@
+.input-select {
+  font-family: "Nova Flat", cursive;
+  font-size: 18px;
+}
+
+/* box: use buttons*/
+/* box-input: use in inputs*/
+.input-select {
+  margin: 1em 0em;
+  padding: 0.5em 1em;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 5px #b1b1b1;
+}
+
+.input-select {
+  background: var(--secondary);
+  color: var(--text-primary);
+}
+
+.input-container {
+  width: 100%;
+}
+
+.input-select {
+  width: 100%;
+}
+
+.input-select + label {
+  position: absolute;
+  left: 1em;
+}
+
+.input-select:focus + label {
+  color: var(--primary);
+}
+
+/*# sourceMappingURL=Select.css.map */
