@@ -1,4 +1,4 @@
-import { API, getUser, getOptions } from './lib';
+import { API, getUser, removeUser, getOptions } from './lib';
 
 const fNote = {};
 

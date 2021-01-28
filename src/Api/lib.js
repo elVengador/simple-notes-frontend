@@ -15,6 +15,12 @@ const getRefreshToken = () =>
     ? `Bearer ${localStorage.getItem('REFRESH_TOKEN')}`
     : '';
 
+const removeUser = () => {
+  localStorage.removeItem('USER_ID');
+  localStorage.removeItem('ACCESS_TOKEN');
+  localStorage.removeItem('REFRESH_TOKEN');
+};
+
 const getOptions = (method, body = {}) => {
   const opt = {
     method,
@@ -31,4 +37,4 @@ const getOptions = (method, body = {}) => {
 
 const isUserLogged = () => getAccessToken() && getRefreshToken() && getUser();
 
-export { API, getUser, getOptions, isUserLogged };
+export { API, getUser, removeUser, getOptions, isUserLogged };

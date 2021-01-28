@@ -4,6 +4,7 @@ import './App.css';
 //    custom hooks
 import useApp from './useApp';
 import useMessage from './Components/Message/useMessage';
+import { isUserLogged } from './Api/lib';
 //    components
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
@@ -14,6 +15,7 @@ import Message from './Components/Message/Message';
 import Home from './Pages/Home/Home';
 import SignIn from './Pages/SignIn/SignIn';
 import SignUp from './Pages/SignUp/SignUp';
+import SignOff from './Pages/SignOff/SignOff';
 import TagPage from './Pages/TagPage/TagPage';
 import NotePage from './Pages/NotePage/NotePage';
 import NotFound from './Pages/NotFound/NotFound';
@@ -44,6 +46,9 @@ export default function App() {
             </Route>
             <Route path="/sign-up">
               <SignUp showMessage={showMessage} />
+            </Route>
+            <Route path="/sign-off">
+              <SignOff showMessage={showMessage} />
             </Route>
             <Route path="/tags" exact>
               <TagPage showMessage={showMessage} />

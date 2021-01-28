@@ -15,14 +15,15 @@ export default function Menu({ testId, hideMenu }) {
   };
   const pageList = isUserLogged()
     ? [
-        { name: 'home', link: '/notes' },
-        { name: 'tags', link: '/tags' },
-        { name: 'notes', link: '/notes' },
+        { name: 'Home', link: '/' },
+        { name: 'Tags', link: '/tags' },
+        { name: 'Notes', link: '/notes' },
+        { name: 'Sign Off', link: '/sign-off' },
       ]
     : [
-        { name: 'home', link: '/' },
-        { name: 'sign-in', link: '/sing-in' },
-        { name: 'sign-up', link: '/sing-up' },
+        { name: 'Home', link: '/' },
+        { name: 'Sign In', link: '/sign-in' },
+        { name: 'Sign Up', link: '/sign-up' },
       ];
 
   return (

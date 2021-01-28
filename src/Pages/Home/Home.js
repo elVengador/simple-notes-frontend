@@ -1,8 +1,8 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-import { faStickyNote } from "@fortawesome/free-solid-svg-icons";
-import "./Home.css";
-import Icon from "../../Components/Icon/Icon";
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
+import './Home.css';
+import Icon from '../../Components/Icon/Icon';
 
 export default function Home() {
   const history = useHistory();
@@ -17,13 +17,13 @@ export default function Home() {
       <div className="home__options">
         <button
           className="button-primary"
-          onClick={() => history.push("/sign-in")}
+          onClick={() => history.push('/sign-in')}
         >
           Sign In
         </button>
         <button
           className="button-secondary"
-          onClick={() => history.push("/sign-up")}
+          onClick={() => history.push('/sign-up')}
         >
           Sign Up
         </button>
