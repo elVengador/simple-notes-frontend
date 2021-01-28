@@ -16,9 +16,9 @@ export default function SingUp({ showMessage }) {
     event.preventDefault();
     if (!email) {
       showMessage('Invalid email', 'fail');
-    } else if (username) {
-      showMessage('Username email', 'fail');
-    } else if (password) {
+    } else if (!username) {
+      showMessage('Invalid Username', 'fail');
+    } else if (!password) {
       showMessage('Invalid password', 'fail');
     } else if (password !== confirmPassword) {
       showMessage('Confirm password is diferent', 'fail');
