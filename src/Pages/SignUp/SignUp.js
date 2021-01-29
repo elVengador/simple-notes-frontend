@@ -30,7 +30,7 @@ export default function SingUp({ showMessage }) {
           password,
         })
         .then(() => {
-          showMessage('This is a message', 'success');
+          showMessage('Sign up successfull', 'success');
           history.push('/sign-in');
         })
         .catch((res) => {
