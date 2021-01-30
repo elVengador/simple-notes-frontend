@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { fAuth } from '../../Api/fAuth';
-
 import Title from '../../Components/Title/Title';
 import Input from '../../Components/Form/Input/Input';
 
@@ -14,29 +13,24 @@ export default function SingUp({ showMessage }) {
   const history = useHistory();
   const handleSignUp = async (event) => {
     event.preventDefault();
-    if (!email) {
-      showMessage('Invalid email', 'fail');
-    } else if (!username) {
-      showMessage('Invalid Username', 'fail');
-    } else if (!password) {
-      showMessage('Invalid password', 'fail');
-    } else if (password !== confirmPassword) {
-      showMessage('Confirm password is diferent', 'fail');
-    } else {
-      await fAuth
-        .signUp({
-          email,
-          username,
-          password,
-        })
-        .then(() => {
-          showMessage('Sign up successfull', 'success');
-          history.push('/sign-in');
-        })
-        .catch((res) => {
-          showMessage(res, 'fail');
-        });
-    }
+    if (!email) return showMessage('Invalid email', 'fail');
+    if (!username) return showMessage('Invalid Username', 'fail');
+    if (!password) return showMessage('Invalid password', 'fail');
+    if (password !== confirmPassword)
+      return showMessage('Confirm password is diferent', 'fail');
+    await fAuth
+      .signUp({
+        email,
+        username,
+        password,
+      })
+      .then(() => {
+        showMessage('Sign up successfull', 'success');
+        history.push('/sign-in');
+      })
+      .catch((res) => {
+        showMessage(res, 'fail');
+      });
   };
   return (
     <div className="sign-up">

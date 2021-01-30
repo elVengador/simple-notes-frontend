@@ -16,7 +16,7 @@ fAuth.signUp = async (body) => {
 };
 
 fAuth.signIn = async (body) => {
-  const response = await fetch(`${API}/auth/sign-up`, getOptions('POST', body));
+  const response = await fetch(`${API}/auth/sign-in`, getOptions('POST', body));
   const res = await response.json();
   if (response.ok) return res;
   throw new Error(res.message);

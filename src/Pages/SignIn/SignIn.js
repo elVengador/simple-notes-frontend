@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import { fAuth } from '../../Api/fAuth';
 import { POST } from '../../Components/Query/useQuery';
 
 import Title from '../../Components/Title/Title';
@@ -11,23 +13,21 @@ export default function SignIn({ showMessage }) {
   const history = useHistory();
   const handleSignIn = async (event) => {
     event.preventDefault();
-    if (email === '') return showMessage('email invalid !!', 'fail');
-    if (!password === '') return showMessage('password invalid !!', 'fail');
-    const response = await POST('/auth/sign-in', {
-      email,
-      password,
-    });
-    const res = await response.json();
-    if (response.ok && res.auth) {
-      showMessage(res.message, 'success');
-      const { accessToken, refreshToken } = res;
-      localStorage.setItem('ACCESS_TOKEN', accessToken);
-      localStorage.setItem('REFRESH_TOKEN', refreshToken);
-      localStorage.setItem('USER_ID', res.user);
-      history.push('/notes');
-    } else {
-      showMessage(res.message, 'fail');
-    }
+    if (!email) return showMessage('email invalid !!', 'fail');
+    if (!password) return showMessage('password invalid !!', 'fail');
+    await fAuth
+      .signIn({ email, password })
+      .then((res) => {
+        showMessage(res.message, 'success');
+        const { accessToken, refreshToken } = res;
+        localStorage.setItem('ACCESS_TOKEN', accessToken);
+        localStorage.setItem('REFRESH_TOKEN', refreshToken);
+        localStorage.setItem('USER_ID', res.user);
+        history.push('/notes');
+      })
+      .catch((res) => {
+        showMessage(res.message, 'fail');
+      });
   };
   return (
     <div className="sign-in">
