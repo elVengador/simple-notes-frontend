@@ -1,6 +1,6 @@
 const API =
   process.env.NODE_ENV === 'production'
-    ? 'https://ev-notes.herokuapp.com/'
+    ? 'https://ev-notes-backend.herokuapp.com/'
     : 'http://localhost:4000/api/v1';
 
 const getUser = () => localStorage.getItem('USER_ID') ?? '';
