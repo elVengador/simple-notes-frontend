@@ -6,7 +6,6 @@
 /* box: use buttons*/
 /* box-input: use in inputs*/
 .home {
-  border: solid 1px #1e9b33;
   display: flex;
   flex-direction: column;
   align-items: center;

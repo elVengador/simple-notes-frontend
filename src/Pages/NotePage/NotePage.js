@@ -9,7 +9,7 @@ import { fNote } from '../../Api/fNote';
 
 import Title from '../../Components/Title/Title';
 import NoteForm from '../../Components/NoteForm/NoteForm';
-import NoteItem from '../../Components/NoteItem/NoteItem';
+import NoteByTag from '../../Components/NoteByTag/NoteByTag';
 
 export default function Notes({ showMessage }) {
   const history = useHistory();
@@ -40,21 +40,29 @@ export default function Notes({ showMessage }) {
   if (noteStatus === 'error') return <p>{noteError.message}</p>;
   if (noteStatus === 'loading') return <p> Is Loading !!</p>;
 
-  const noteItemList = noteData.map((cur, idx) => (
-    <NoteItem
-      key={`note-item-${idx}`}
-      showMessage={showMessage}
-      idNote={cur._id}
-      name={cur.name}
+  // agrupo las notas por tag
+  const notesByTagData = tagData.map((curTag) => {
+    const { _id, name } = curTag;
+    return {
+      tag: name,
+      notes: noteData.filter((curNote) => curNote.tag === _id),
+    };
+  });
+  // listo las notas por tag
+  const noteByTagList = notesByTagData.map((cur) => (
+    <NoteByTag
       tag={cur.tag}
+      notes={cur.notes}
       tagData={tagData}
+      showMessage={showMessage}
     />
   ));
   return (
     <div className="note-page">
       <Title text={'Notes'} />
       <NoteForm showMessage={showMessage} tagData={tagData} />
-      {noteItemList}
+
+      {noteByTagList}
     </div>
   );
 }
