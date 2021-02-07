@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function ButtonIcon({ icon, type, cb }) {
+export default function ButtonIcon({ icon, type, cb = () => {} }) {
   const iconSvg = <FontAwesomeIcon icon={icon} />;
   const colorSvg =
     type === 'light'

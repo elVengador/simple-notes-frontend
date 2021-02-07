@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { useHistory } from 'react-router-dom';
+import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './NotePage.css';
 
 import { fAuth } from '../../Api/fAuth';
@@ -13,6 +14,7 @@ import NoteByTag from '../../Components/NoteByTag/NoteByTag';
 
 export default function Notes({ showMessage }) {
   const history = useHistory();
+  const [showForm, setShowForm] = useState(false);
   useEffect(() => fAuth.auth());
 
   const errorOption = {
@@ -49,18 +51,29 @@ export default function Notes({ showMessage }) {
     };
   });
   // listo las notas por tag
-  const noteByTagList = notesByTagData.map((cur) => (
+  const noteByTagList = notesByTagData.map((cur, idx) => (
     <NoteByTag
+      key={`note-by-tag-${idx}`}
       tag={cur.tag}
       notes={cur.notes}
       tagData={tagData}
       showMessage={showMessage}
     />
   ));
+
+  // optiones del titulo
+  const titleOptions = [
+    {
+      icon: showForm ? faTimes : faPlus,
+      cb: () => {
+        setShowForm(!showForm);
+      },
+    },
+  ];
   return (
     <div className="note-page">
-      <Title text={'Notes'} />
-      <NoteForm showMessage={showMessage} tagData={tagData} />
+      <Title text={'Notes'} options={titleOptions} />
+      {showForm && <NoteForm showMessage={showMessage} tagData={tagData} />}
 
       {noteByTagList}
     </div>

@@ -8,7 +8,8 @@
   margin: 0px;
 }
 .title-page__options {
-  border: solid 1px green;
+  display: flex;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=Title.css.map */

@@ -7,6 +7,7 @@
     margin: 0px;
   }
   &__options {
-    border: solid 1px green;
+    display: flex;
+    justify-content: space-between;
   }
 }

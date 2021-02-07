@@ -40,4 +40,8 @@
   position: relative;
 }
 
+.hide {
+  display: none;
+}
+
 /*# sourceMappingURL=App.css.map */

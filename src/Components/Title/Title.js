@@ -1,23 +1,21 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import ButtonIcon from '../Button/ButtonIcon';
 
 import './Title.css';
 
 export default function Title({ text, options = [] }) {
-  const history = useHistory();
-  const opt = options.map((cur, idx) => (
-    <div
+  console.log('options:', options);
+  const optionList = options.map((cur, idx) => (
+    <ButtonIcon
       key={`title-option-${idx}`}
-      className="button--icon"
-      onClick={() => history.push(cur.link)}
-    >
-      {cur.icon}
-    </div>
+      icon={cur.icon}
+      cb={() => cur.cb()}
+    />
   ));
   return (
     <div className="title-page">
       <h3 className="title-page__text">{text}</h3>
-      <div className="title-page__options">{opt}</div>
+      <div className="title-page__options">{optionList}</div>
     </div>
   );
 }

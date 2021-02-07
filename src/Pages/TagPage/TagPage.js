@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useQuery } from 'react-query';
+import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { fAuth } from '../../Api/fAuth';
 import { fTag } from '../../Api/fTag';
@@ -10,6 +11,7 @@ import TagItem from '../../Components/TagItem/TagItem';
 
 export default function TagList({ showMessage }) {
   const history = useHistory();
+  const [showForm, setShowForm] = useState(false);
   useEffect(() => fAuth.auth());
 
   const { status, data, error } = useQuery('tags', fTag.findAll, {
@@ -31,11 +33,19 @@ export default function TagList({ showMessage }) {
       showMessage={showMessage}
     />
   ));
+  const titleOptions = [
+    {
+      icon: showForm ? faTimes : faPlus,
+      cb: () => {
+        setShowForm(!showForm);
+      },
+    },
+  ];
 
   return (
     <div className="tag-page">
-      <Title text={'Tags'} />
-      <TagForm showMessage={showMessage} />
+      <Title text={'Tags'} options={titleOptions} />
+      {showForm && <TagForm showMessage={showMessage} />}
       {tagItemList}
     </div>
   );
