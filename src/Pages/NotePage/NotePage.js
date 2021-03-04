@@ -72,7 +72,7 @@ export default function Notes({ showMessage }) {
   ];
   return (
     <div className="note-page">
-      <Title text={'Notes'} options={titleOptions} />
+      <Title text={`Notes (${noteData.length})`} options={titleOptions} />
       {showForm && <NoteForm showMessage={showMessage} tagData={tagData} />}
 
       {noteByTagList}

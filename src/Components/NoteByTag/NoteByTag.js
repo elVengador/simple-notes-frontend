@@ -25,7 +25,7 @@ export default function NoteByTag({ tag, notes, tagData, showMessage }) {
           icon={showNotes ? faAngleDown : faAngleRight}
           cb={toogleNoteList}
         />
-        {tag}
+        {`${tag} (${notes.length})`}
       </h2>
       {showNotes && noteItemList}
     </div>
