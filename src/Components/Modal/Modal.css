@@ -1,13 +1,45 @@
+.modal__header__title {
+  font-family: "Nova Flat", cursive;
+  font-size: 24px;
+}
+
+/* box: use buttons*/
+/* box-input: use in inputs*/
 .modal {
   position: absolute;
   background: rgba(34, 34, 34, 0.548);
-  color: var(--text-primary);
   border: solid 2px #00f7ff;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   display: none;
+}
+.modal .container {
+  margin: auto;
+  position: relative;
+  min-width: 200px;
+  border: solid 2px palevioletred;
+}
+.modal__header {
+  border: solid 2px palevioletred;
+  background: var(--primary);
+  padding: 1em;
+}
+.modal__header__icon {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.modal__header__title {
+  margin: 0px;
+  color: var(--secondary);
+  text-align: center;
+}
+.modal__body {
+  border: solid 2px palevioletred;
+  background: var(--background);
+  padding: 1em;
 }
 
 /*# sourceMappingURL=Modal.css.map */

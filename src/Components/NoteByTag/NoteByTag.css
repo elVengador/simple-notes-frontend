@@ -1,6 +1,7 @@
 .note-by-tag-title {
   display: flex;
   column-gap: 0.5em;
+  user-select: none;
 }
 
 /*# sourceMappingURL=NoteByTag.css.map */

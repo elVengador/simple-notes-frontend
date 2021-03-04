@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 //    custom hooks
-import useApp from './useApp';
+import useModal from './useModal';
 import useMessage from './Components/Message/useMessage';
 import { isUserLogged } from './Api/lib';
 //    components
@@ -24,7 +24,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import NoteItem from './Components/NoteItem/NoteItem';
 
 export default function App() {
-  const { isMenuActive, showMenu, hideMenu } = useApp();
+  const { isMenuActive, showMenu, hideMenu } = useModal();
   const { text, colorMessage, isMessageVisible, showMessage } = useMessage();
 
   return (
@@ -61,7 +61,7 @@ export default function App() {
           </Switch>
         </div>
         <Footer />
-        <Modal isMenuActive={isMenuActive}>
+        <Modal isMenuActive={isMenuActive} hideMenu={hideMenu}>
           <Menu hideMenu={hideMenu} />
         </Modal>
       </BrowserRouter>

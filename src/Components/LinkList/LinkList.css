@@ -1,0 +1,17 @@
+.link-list li {
+  font-family: "Nova Flat", cursive;
+  font-size: 18px;
+}
+
+/* box: use buttons*/
+/* box-input: use in inputs*/
+.link-list {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.link-list li {
+  margin: 1em;
+}
+
+/*# sourceMappingURL=LinkList.css.map */

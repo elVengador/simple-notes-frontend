@@ -12,7 +12,17 @@ import { fTag } from '../../Api/fTag';
 import Input from '../Form/Input/Input';
 import ButtonIcon from '../Button/ButtonIcon';
 
-export default function Tag({ showMessage, idTag, name }) {
+export default function Tag({
+  showMessage,
+  idTag,
+  name,
+  isMenuActive,
+  hideMenu,
+  showMenu,
+  setIsConfirm,
+  setConfirmTitle,
+  setConfirmCb,
+}) {
   const [isEdit, setIsEdit] = useState(false);
   const [tmpName, setTmpName] = useState(name);
   const queryClient = useQueryClient();
@@ -47,7 +57,11 @@ export default function Tag({ showMessage, idTag, name }) {
       mutationCreate.mutate({ id: idTag, body });
     }
   };
-  const handleRemove = () => mutationRemove.mutate(idTag);
+  const handleRemove = () => {
+    setConfirmTitle(`Quieres remover el tag " ${name} "?`);
+    setConfirmCb(() => () => mutationRemove.mutate(idTag));
+    showMenu();
+  };
 
   if (isEdit)
     return (

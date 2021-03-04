@@ -1,10 +1,10 @@
-.button--icon-light, .button--icon-dark, .button-primary, .button-primary--center, .button-secondary {
+.button--icon-light, .button--icon-dark, .button-primary, .button-primary--center, .button-secondary, .button-secondary--center {
   font-family: "Nova Flat", cursive;
   font-size: 18px;
 }
 
 /* box: use buttons*/
-.button-primary, .button-primary--center, .button-secondary {
+.button-primary, .button-primary--center, .button-secondary, .button-secondary--center {
   padding: 0.5em 1em;
   border: none;
   box-shadow: 3px 3px 5px #818181;
@@ -24,7 +24,7 @@
   color: var(--text-secondary);
 }
 
-.button-secondary {
+.button-secondary, .button-secondary--center {
   background: var(--secondary);
   color: var(--text-primary);
 }
@@ -40,6 +40,11 @@
 
 .button-secondary {
   margin: 1em;
+}
+
+.button-secondary--center {
+  display: block;
+  margin: 1em auto;
 }
 
 .button--icon {

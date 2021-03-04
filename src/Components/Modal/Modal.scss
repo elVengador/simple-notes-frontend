@@ -1,11 +1,38 @@
+@use "../../Shared";
 .modal {
   position: absolute;
   background: rgba(34, 34, 34, 0.548);
-  color: var(--text-primary);
   border: solid 2px rgb(0, 247, 255);
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   display: none;
+  .container {
+    margin: auto;
+    position: relative;
+    min-width: 200px;
+    border: solid 2px palevioletred;
+  }
+  &__header {
+    border: solid 2px palevioletred;
+    background: var(--primary);
+    padding: 1em;
+    &__icon {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+    }
+    &__title {
+      margin: 0px;
+      color: var(--secondary);
+      text-align: center;
+      @extend %litle-title;
+    }
+  }
+  &__body {
+    border: solid 2px palevioletred;
+    background: var(--background);
+    padding: 1em;
+  }
 }

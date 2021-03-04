@@ -4,7 +4,6 @@ import ButtonIcon from '../Button/ButtonIcon';
 import './Title.css';
 
 export default function Title({ text, options = [] }) {
-  console.log('options:', options);
   const optionList = options.map((cur, idx) => (
     <ButtonIcon
       key={`title-option-${idx}`}

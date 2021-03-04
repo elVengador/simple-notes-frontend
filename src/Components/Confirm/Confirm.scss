@@ -1,0 +1,6 @@
+@use "../../Shared";
+.confirm {
+  &__text {
+    @extend %normal-text;
+  }
+}

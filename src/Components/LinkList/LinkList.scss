@@ -1,0 +1,10 @@
+@use "../../Shared";
+.link-list {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  li {
+    margin: 1em;
+    @extend %normal-text;
+  }
+}

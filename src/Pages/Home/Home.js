@@ -12,7 +12,7 @@ export default function Home() {
         <Icon icon={faStickyNote} />
       </div>
       <p className="home__message">
-        Write yout notes easy and read them ererywhere
+        Write yout notes easy and read them ererywhere 😃
       </p>
       <div className="home__options">
         <button
