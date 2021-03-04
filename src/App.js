@@ -24,13 +24,13 @@ import NotFound from './Pages/NotFound/NotFound';
 import NoteItem from './Components/NoteItem/NoteItem';
 
 export default function App() {
-  const { isMenuActive, showMenu, hideMenu } = useModal();
+  const { isActive, show, hide } = useModal();
   const { text, colorMessage, isMessageVisible, showMessage } = useMessage();
 
   return (
     <div className="app">
       <BrowserRouter>
-        <Header showMenu={showMenu} />
+        <Header showMenu={show} />
         <div className="wrapper">
           <Message
             text={text}
@@ -61,8 +61,8 @@ export default function App() {
           </Switch>
         </div>
         <Footer />
-        <Modal isMenuActive={isMenuActive} hideMenu={hideMenu}>
-          <Menu hideMenu={hideMenu} />
+        <Modal isActive={isActive} hide={hide} title="Menu">
+          <Menu hideMenu={hide} />
         </Modal>
       </BrowserRouter>
     </div>

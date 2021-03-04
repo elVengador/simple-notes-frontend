@@ -5,10 +5,10 @@ import './Menu.css';
 import { isUserLogged } from '../../Api/lib';
 import LinkList from '../../Components/LinkList/LinkList';
 
-export default function Menu({ testId, hideMenu }) {
+export default function Menu({ testId, hide }) {
   const history = useHistory();
   const redirect = (path) => {
-    hideMenu();
+    hide();
     history.push(path);
   };
   const pageList = isUserLogged()

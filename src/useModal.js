@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 export default function useApp() {
-  const [isMenuActive, setIsMenuActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-  const showMenu = () => setIsMenuActive(true);
-  const hideMenu = () => setIsMenuActive(false);
+  const show = () => setIsActive(true);
+  const hide = () => setIsActive(false);
 
   return {
-    isMenuActive,
-    showMenu,
-    hideMenu,
+    isActive,
+    show,
+    hide,
   };
 }

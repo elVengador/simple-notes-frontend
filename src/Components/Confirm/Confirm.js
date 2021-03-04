@@ -3,12 +3,10 @@ import './Confirm.css';
 
 import ButtonCenter from '../Button/ButtonCenter';
 
-export default function Confirm({ hideMenu, text, cb }) {
-  /*const [title, setTitle] = useState('');
-  const [cb, setCb] = useState()*/
+export default function Confirm({ hide, text, cb }) {
   const handleConfirm = () => {
     console.log('confirm');
-    hideMenu();
+    hide();
     cb();
   };
   return (

@@ -12,10 +12,8 @@
     margin: auto;
     position: relative;
     min-width: 200px;
-    border: solid 2px palevioletred;
   }
   &__header {
-    border: solid 2px palevioletred;
     background: var(--primary);
     padding: 1em;
     &__icon {
@@ -31,7 +29,6 @@
     }
   }
   &__body {
-    border: solid 2px palevioletred;
     background: var(--background);
     padding: 1em;
   }

@@ -12,12 +12,17 @@ import { fNote } from '../../Api/fNote';
 import Input from '../Form/Input/Input';
 import Select from '../Form/Select/Select';
 import ButtonIcon from '../Button/ButtonIcon';
+import useModal from '../../useModal';
+import Modal from '../Modal/Modal';
+import Confirm from '../Confirm/Confirm';
 
 export default function NoteItem({ showMessage, idNote, name, tag, tagData }) {
   const [isEdit, setIsEdit] = useState(false);
   const [tmpName, setTmpName] = useState(name);
   const [tmpTag, setTmpTag] = useState(tag);
   const queryClient = useQueryClient();
+
+  const { isActive, show, hide } = useModal();
 
   const mutationCreate = useMutation(fNote.update, {
     onError: () => {
@@ -51,7 +56,9 @@ export default function NoteItem({ showMessage, idNote, name, tag, tagData }) {
       mutationCreate.mutate({ id: idNote, body });
     }
   };
-  const handleRemove = () => mutationRemove.mutate(idNote);
+  const handleRemove = () => {
+    mutationRemove.mutate(idNote);
+  };
 
   if (isEdit)
     return (
@@ -72,8 +79,15 @@ export default function NoteItem({ showMessage, idNote, name, tag, tagData }) {
       <p className="note-item__name">{name}</p>
       <div className="note-item__controls">
         <ButtonIcon icon={faPen} cb={() => setIsEdit(true)} />
-        <ButtonIcon icon={faTrashAlt} cb={() => handleRemove()} />
+        <ButtonIcon icon={faTrashAlt} cb={() => show()} />
       </div>
+      <Modal isActive={isActive} hide={hide}>
+        <Confirm
+          hide={hide}
+          text={'Deseas eliminar la nota'}
+          cb={() => handleRemove()}
+        />
+      </Modal>
     </div>
   );
 }

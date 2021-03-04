@@ -19,10 +19,8 @@
   margin: auto;
   position: relative;
   min-width: 200px;
-  border: solid 2px palevioletred;
 }
 .modal__header {
-  border: solid 2px palevioletred;
   background: var(--primary);
   padding: 1em;
 }
@@ -37,7 +35,6 @@
   text-align: center;
 }
 .modal__body {
-  border: solid 2px palevioletred;
   background: var(--background);
   padding: 1em;
 }
