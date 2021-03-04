@@ -62,7 +62,7 @@ export default function App() {
         </div>
         <Footer />
         <Modal isActive={isActive} hide={hide} title="Menu">
-          <Menu hideMenu={hide} />
+          <Menu hide={hide} />
         </Modal>
       </BrowserRouter>
     </div>

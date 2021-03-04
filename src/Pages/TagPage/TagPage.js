@@ -5,19 +5,16 @@ import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { fAuth } from '../../Api/fAuth';
 import { fTag } from '../../Api/fTag';
-import useModal from '../../useModal';
 import Title from '../../Components/Title/Title';
 import TagForm from '../../Components/TagForm/TagForm';
 import TagItem from '../../Components/TagItem/TagItem';
-import Modal from '../../Components/Modal/Modal';
-import Confirm from '../../Components/Confirm/Confirm';
 
 export default function TagList({ showMessage }) {
   const history = useHistory();
   const [showForm, setShowForm] = useState(false);
   const [confirmTitle, setConfirmTitle] = useState('');
   const [confirmCb, setConfirmCb] = useState();
-  const { isMenuActive, showMenu, hideMenu } = useModal();
+
   useEffect(() => fAuth.auth());
 
   const { status, data, error } = useQuery('tags', fTag.findAll, {
@@ -37,9 +34,6 @@ export default function TagList({ showMessage }) {
       idTag={cur._id}
       name={cur.name}
       showMessage={showMessage}
-      isMenuActive={isMenuActive}
-      hideMenu={hideMenu}
-      showMenu={showMenu}
       setConfirmTitle={setConfirmTitle}
       setConfirmCb={setConfirmCb}
     />
@@ -58,9 +52,6 @@ export default function TagList({ showMessage }) {
       <Title text={'Tags'} options={titleOptions} />
       {showForm && <TagForm showMessage={showMessage} />}
       {tagItemList}
-      <Modal isMenuActive={isMenuActive} hideMenu={hideMenu}>
-        <Confirm hideMenu={hideMenu} text={confirmTitle} cb={confirmCb} />
-      </Modal>
     </div>
   );
 }

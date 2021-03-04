@@ -11,21 +11,16 @@ import './TagItem.css';
 import { fTag } from '../../Api/fTag';
 import Input from '../Form/Input/Input';
 import ButtonIcon from '../Button/ButtonIcon';
+import useModal from '../../useModal';
+import Modal from '../Modal/Modal';
+import Confirm from '../Confirm/Confirm';
 
-export default function Tag({
-  showMessage,
-  idTag,
-  name,
-  isMenuActive,
-  hideMenu,
-  showMenu,
-  setIsConfirm,
-  setConfirmTitle,
-  setConfirmCb,
-}) {
+export default function Tag({ showMessage, idTag, name }) {
   const [isEdit, setIsEdit] = useState(false);
   const [tmpName, setTmpName] = useState(name);
   const queryClient = useQueryClient();
+
+  const { isActive, show, hide } = useModal();
 
   const mutationCreate = useMutation(fTag.update, {
     onError: () => {
@@ -58,9 +53,7 @@ export default function Tag({
     }
   };
   const handleRemove = () => {
-    setConfirmTitle(`Quieres remover el tag " ${name} "?`);
-    setConfirmCb(() => () => mutationRemove.mutate(idTag));
-    showMenu();
+    mutationRemove.mutate(idTag);
   };
 
   if (isEdit)
@@ -76,8 +69,17 @@ export default function Tag({
       <p className="tag-item__name">{name}</p>
       <div className="tag-item__controls">
         <ButtonIcon icon={faPen} cb={() => setIsEdit(true)} />
-        <ButtonIcon icon={faTrashAlt} cb={() => handleRemove()} />
+        <ButtonIcon icon={faTrashAlt} cb={() => show()} />
       </div>
+      <Modal isActive={isActive} hide={hide}>
+        <Confirm
+          hide={hide}
+          text={
+            'Deseas eliminar este tag?, se eliminaran todas tus notas asociadas al tag'
+          }
+          cb={() => handleRemove()}
+        />
+      </Modal>
     </div>
   );
 }
