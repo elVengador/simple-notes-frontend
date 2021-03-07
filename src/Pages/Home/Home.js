@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
 import './Home.css';
@@ -12,7 +12,7 @@ export default function Home() {
         <Icon icon={faStickyNote} />
       </div>
       <p className="home__message">
-        Write yout notes easy and read them ererywhere 😃
+        Write your notes easy and read them everywhere 😃
       </p>
       <div className="home__options">
         <button
