@@ -13,7 +13,6 @@ export default function Menu({ testId, hide }) {
   };
   const pageList = isUserLogged()
     ? [
-        { name: 'Home', link: '/' },
         { name: 'Tags', link: '/tags' },
         { name: 'Notes', link: '/notes' },
         { name: 'Sign Off', link: '/sign-off' },

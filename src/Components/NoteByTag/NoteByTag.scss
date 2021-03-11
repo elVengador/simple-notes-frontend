@@ -1,7 +1,13 @@
 .note-by-tag {
-  &-title {
+  &__title {
     display: flex;
     column-gap: 0.5em;
+    margin: 0px;
+    padding: 0.5em 0.5em;
     user-select: none;
+  }
+  &__title:hover {
+    background: var(--secondary);
+    cursor: pointer;
   }
 }

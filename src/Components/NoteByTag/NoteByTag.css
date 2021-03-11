@@ -1,7 +1,13 @@
-.note-by-tag-title {
+.note-by-tag__title {
   display: flex;
   column-gap: 0.5em;
+  margin: 0px;
+  padding: 0.5em 0.5em;
   user-select: none;
+}
+.note-by-tag__title:hover {
+  background: var(--secondary);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=NoteByTag.css.map */

@@ -20,11 +20,8 @@ export default function NoteByTag({ tag, notes, tagData, showMessage }) {
   ));
   return (
     <div className="note-by-tag">
-      <h2 className="note-by-tag-title">
-        <Icon
-          icon={showNotes ? faAngleDown : faAngleRight}
-          cb={toogleNoteList}
-        />
+      <h2 className="note-by-tag__title" onClick={toogleNoteList}>
+        <Icon icon={showNotes ? faAngleDown : faAngleRight} />
         {`${tag} (${notes.length})`}
       </h2>
       {showNotes && noteItemList}

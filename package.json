@@ -25,7 +25,7 @@
   "scripts": {
     "start": "node ./server.js",
     "build": "react-scripts build",
-    "dev": "react-scripts start",
+    "dev":"concurrently \"react-scripts start\" \"sass --watch ./src:./src\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "git push heroku main"
