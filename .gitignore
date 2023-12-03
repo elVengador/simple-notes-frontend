@@ -24,3 +24,5 @@ yarn-error.log*
 
 # my config
 .eslintcache
+
+.env.local

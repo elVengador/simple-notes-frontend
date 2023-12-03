@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './Modal.css';
 
-import Icon from '../../Components/Icon/Icon';
+import Icon from '../Icon/Icon';
 
 export default function Modal({ children, testId, hide, isActive, title }) {
   const modal = useRef(null);

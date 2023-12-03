@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './Menu.css';
 
 import { isUserLogged } from '../../Api/lib';
-import LinkList from '../../Components/LinkList/LinkList';
+import LinkList from '../LinkList/LinkList';
 
 export default function Menu({ testId, hide }) {
   const history = useHistory();

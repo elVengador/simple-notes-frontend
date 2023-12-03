@@ -18,6 +18,8 @@ export default function SignIn({ showMessage }) {
     await fAuth
       .signIn({ email, password })
       .then((res) => {
+        if(!res.auth) throw new Error('User or password is invalid!')
+        console.log({res})
         showMessage(res.message, 'success');
         const { accessToken, refreshToken } = res;
         localStorage.setItem('ACCESS_TOKEN', accessToken);

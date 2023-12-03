@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '../../Components/Link/Link';
+import Link from '../Link/Link';
 
 import './LinkList.css';
 

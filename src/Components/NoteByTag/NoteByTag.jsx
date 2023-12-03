@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import './NoteByTag.css';
 
-import Icon from '../../Components/Icon/Icon';
-import NoteItem from '../../Components/NoteItem/NoteItem';
+import Icon from '../Icon/Icon';
+import NoteItem from '../NoteItem/NoteItem';
 
 export default function NoteByTag({ tag, notes, tagData, showMessage }) {
   const [showNotes, setShowNotes] = useState(false);
