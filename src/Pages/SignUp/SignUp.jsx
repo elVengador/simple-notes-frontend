@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { fAuth } from '../../Api/fAuth';
 import Title from '../../Components/Title/Title';
 import Input from '../../Components/Form/Input/Input';
+import {getErrorMessage} from '../../utils/error'
 
 export default function SingUp({ showMessage }) {
   const [email, setEmail] = useState('');
@@ -29,7 +30,8 @@ export default function SingUp({ showMessage }) {
         history.push('/sign-in');
       })
       .catch((res) => {
-        showMessage(res, 'fail');
+        const message = getErrorMessage(res)
+        showMessage(message, 'fail');
       });
   };
   return (
