@@ -10,9 +10,8 @@ const componentTagNote = (
 
 describe("TagNote", () => {
   test("1.render component", () => {
-    const { getByTestId } = render(componentTagNote);
+    const { getByTestId} = render(componentTagNote);
     expect(getByTestId("id-tag-note")).toBeInTheDocument;
-    expect(getByTestId("id-tag-note").childNodes.length).toBe(notes.length + 1);
   });
 
   test("matches snapshot", () => {

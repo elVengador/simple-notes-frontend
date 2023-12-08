@@ -1,6 +1,8 @@
+import {VITE_URI} from '../constants'
+
 const API =
   process.env.NODE_ENV === 'production'
-    ? import.meta.env.VITE_URI
+    ? VITE_URI
     : 'http://localhost:4000/api/v1';
 
 const getUser = () => localStorage.getItem('USER_ID') ?? '';

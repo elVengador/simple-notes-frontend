@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
 import userEvent from "@testing-library/user-event";
-import useApp from "../../useApp";
+import useApp from "../../useModal";
 import Header from "./Header";
 
 describe("component::Header", () => {
@@ -12,13 +12,13 @@ describe("component::Header", () => {
   it("enable menu", () => {
     const { result } = renderHook(() => useApp());
     const { getByTestId } = render(
-      <Header testId={"id-header"} showMenu={result.current.showMenu} />
+      <Header testId={"id-header"} showMenu={result.current.show} />
     );
-    expect(result.current.isMenuActive).toBe(false);
+    expect(result.current.isActive).toBe(false);
     act(() => {
       userEvent.click(getByTestId("id-icon-menu"));
     });
 
-    expect(result.current.isMenuActive).toBe(true);
+    expect(result.current.isActive).toBe(true);
   });
 });

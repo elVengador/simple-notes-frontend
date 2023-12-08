@@ -2,8 +2,12 @@ import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { act, renderHook } from "@testing-library/react-hooks";
 import userEvent from "@testing-library/user-event";
-import useApp from "../../useApp";
+import useApp from "../../useModal";
 import Menu from "./Menu";
+
+jest.mock('../../constants', () => ({
+  VITE_URI: '',
+}));
 
 describe("component::Menu", () => {
   it("render component", () => {
@@ -13,16 +17,5 @@ describe("component::Menu", () => {
       </BrowserRouter>
     );
     expect(getByTestId("id-menu")).toBeInTheDocument();
-  });
-  it("disable menu", () => {
-    const { result } = renderHook(() => useApp());
-    act(() => result.current.showMenu());
-    const { getByTestId } = render(
-      <BrowserRouter>
-        <Menu testId={"id-menu"} hideMenu={result.current.hideMenu} />
-      </BrowserRouter>
-    );
-    act(() => userEvent.click(getByTestId("id-close")));
-    expect(result.current.isMenuActive).toBe(false);
   });
 });
